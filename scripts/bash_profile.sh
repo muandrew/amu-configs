@@ -5,6 +5,9 @@ else
     PATH=$AMU_OLD_PATH
 fi
 
+#for my eyes
+export LSCOLORS=ExFxCxDxBxegedabagacad
+
 #bash
 alias ll="ls -la"
 alias sbp="source ~/.bash_profile"
