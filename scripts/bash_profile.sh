@@ -6,6 +6,7 @@ else
 fi
 
 #for my eyes
+export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 
 #bash
