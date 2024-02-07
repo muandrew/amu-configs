@@ -12,6 +12,9 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 # export LS_COLORS
 # zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
+# posix global for editor preference
+export VISUAL=vi
+
 #bash
 alias ll="ls -la"
 alias sbp="source ~/.bash_profile"
@@ -27,6 +30,8 @@ alias gco="git checkout"
 alias gcp="git cherry-pick"
 alias gcpa="git cherry-pick --abort"
 alias gcpc="git cherry-pick --continue"
+alias gco="git checkout"
+alias gcom="git checkout main"
 alias gd="git diff"
 alias gfomm="git fetch origin main:main"
 alias gl="git log"
@@ -40,6 +45,11 @@ alias grc="git rebase --continue"
 alias gro="git rebase --onto"
 alias gr-s="git reset --soft"
 alias gr-h="git reset --hard"
+
+function charch() {
+  echo "arch -x86_64 zsh"
+  arch -x86_64 zsh
+}
 
 #android
 alias acat="adb logcat"
