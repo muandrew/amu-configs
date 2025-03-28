@@ -14,6 +14,7 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 
 # posix global for editor preference
 export VISUAL=vi
+export EDITOR=vim
 
 #bash
 alias ll="ls -la"
