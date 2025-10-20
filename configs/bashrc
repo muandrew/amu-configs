@@ -18,8 +18,6 @@ export EDITOR=vim
 
 #bash
 alias ll="ls -la"
-alias sbp="source ~/.bash_profile"
-alias vbp="vi ~/.bash_profile"
 
 #git
 alias ga="git add"
