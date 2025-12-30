@@ -3,11 +3,13 @@
 INSTALL_DIR=$(dirname -- "$(readlink -f -- "$0")")
 
 set_up_vim() {
+  VRC_SRC="$INSTALL_DIR/configs/vimrc"
+  VRC_DEST_STR="\$HOME/.vimrc"
   if [[ ! -f "$HOME/.vimrc" ]]; then
-    ln -s configs/vimrc $HOME/.vimrc    
-    echo "linked .vimrc to configs/vimrc ✅"
+    ln -s "$VRC_SRC" "$HOME/.vimrc" 
+    echo "linked to ${VRC_SRC}✅"
   else
-    echo ".vimrc already exists, skipping. ❌"
+    echo "$VRC_DEST_STR already exists, skipping. ❌"
   fi
 }
 
