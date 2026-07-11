@@ -22,6 +22,7 @@ alias ll="ls -la"
 #git
 alias ga="git add"
 alias gaa="git add ."
+alias gau="git add -u"
 alias gb="git branch"
 alias gbuu="git branch --unset-upstream"
 alias gca="git commit --amend"
