@@ -22,6 +22,7 @@ alias ll="ls -la"
 #git
 alias ga="git add"
 alias gaa="git add ."
+alias gam="git am"
 alias gau="git add -u"
 alias gb="git branch"
 alias gbuu="git branch --unset-upstream"
@@ -51,6 +52,39 @@ alias gr-h="git reset --hard"
 function charch() {
   echo "arch -x86_64 zsh"
   arch -x86_64 zsh
+}
+
+
+# REPO_A="/a"
+# REPO_B="/b"
+# declare -A amu_repo_mapper
+# amu_repo_mapper[$REPO_A]="${REPO_B}"
+# amu_repo_mapper[$REPO_B]="${REPO_A}"
+
+# git am remote
+function gamr {
+    basesah_or_sha=$1
+    sha2_or_empty=$2
+    curr_repo=$(git rev-parse --show-toplevel)
+    other_repo="${amu_repo_mapper[$curr_repo]}"
+
+    if [[ -z "${basesah_or_sha}" ]]; then
+        echo "need to specify sha to pull from"
+        return 1
+    fi
+
+    if [[ -z "${sha2_or_empty}" ]]; then
+        sha_range="${basesah_or_sha}^..${basesah_or_sha}"
+    else
+        sha_range="${basesah_or_sha}..${sha2_or_empty}"
+    fi
+
+    if [[ -z "$other_repo" ]]; then
+        echo "no other repo mapping found for ${curr_repo}"
+    else
+        git --git-dir="${other_repo}/.git" format-patch --stdout -1 "${sha_range}" | git am --reject
+    fi
+    return 0
 }
 
 #android
